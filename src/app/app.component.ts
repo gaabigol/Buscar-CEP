@@ -46,11 +46,10 @@ export class AppComponent {
   limpar(){
     this.pesquisado= false;
     this.espera=false;
-    this.cep="";
-    this.endereco="";
-    this.retorno.rua="";
-    this.retorno.cidade="";
-    this.retorno.estado="";
+    this.endereco.replace(/\D/g,'');
+    this.retorno.rua.replace(/\D/g,'');
+    this.retorno.cidade.replace(/\D/g,'');
+    this.retorno.estado.replace(/\D/g,'');
   }
 
 }
