@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.largura-aumentada {
+    width: 500px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .button-result {
+    margin-bottom: 20px;
+  }

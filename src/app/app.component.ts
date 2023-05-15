@@ -9,20 +9,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'buscarCEP';
 
+  public cep: string='';
+  public endereco:any;
+
   constructor(private http: HttpClient) {}
 
-  //variaveis do form
-  cep: string='';
 
-  //variaveis do retorno
-  endereco: any;
   retorno={
     rua:'',
     cidade:'',
     estado:''
   }
 
-  //logradouro=rua, localidade=cidade, uf=estado
+
   pesquisado = false;
   espera = false;
 
@@ -31,7 +30,6 @@ export class AppComponent {
     this.cep = this.cep.replace(/\D/g,'');
 
     const url = 'http://viacep.com.br/ws/' + this.cep + '/json/';
-
     this.http.get(url).subscribe((res) => {
       this.endereco = res;
       this.retorno.rua = this.endereco.logradouro;

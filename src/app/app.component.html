@@ -3,28 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UACompatible" content="IE=edge" />
-    <meta name="viewport"content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h3>Confere CEP</h3>
-    <form class="" #cepform="ngForm" (ngSubmit)="pesquisa()">
-      <div>
-        <label for="cep" class="">
-          FERRAMENTAS DE DESENVOLVIMENTO WEB Informe seu CEP
-        </label>
-        <input name="cep" type="text" [(ngModel)]="cep"/>
+    <div class="card text-center">
+      <div class="card-header">
+        <h3>Buscar-CEP</h3>
       </div>
-      <div class="btn btnprimary btn-sm btn-icon-split">
-        <span class="icon textwhite-80">
-          <i class="fas fahome"></i>
-        </span>
-        <button class="btn btnprimary btnsm" type="submit">Pesquisa</button>
+      <div class="card-body">
+        <p class="card-text">
+          Com o BUSCAR-CEP, encontrar um endereço nunca foi tão fácil!<br />
+          Insira o CEP desejado e obtenha rapidamente informações completas
+          sobre o endereço correspondente.<br />
+          Nosso aplicativo é simples, rápido e fácil de usar. <br />
+          Experimente agora mesmo e nunca mais perca tempo buscando um
+          endereço!"
+        </p>
+        <form class="" #cepform="ngForm" (ngSubmit)="pesquisa()">
+          <div>
+            <label for="cep" class="">Informe seu CEP</label>
+            <input
+              class="form-control"
+              name="cep"
+              type="text"
+              [(ngModel)]="cep"
+            />
+            <br />
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
+          </div>
+        </form>
       </div>
-    </form>
+      <hr />
+    </div>
     <br />
     <div class="ml-2 spinnerbroder spinner-bordersm" [hidden]="!espera"></div>
-    <div class="shadow-lg mx4" [hidden]="!pesquisado">
+    <div class="shadow-lg mx4 largura-aumentada" [hidden]="!pesquisado">
       <b>CEP pesquisado: </b>
       {{ cep }}
       <br /><b>Rua encontrda: </b>
@@ -33,7 +47,7 @@
       {{ retorno.cidade }}
       <br /><b>Do estado: </b>
       {{ retorno.estado }}
-      <br /><br /><br /><button (click)="limpar()">Reinicia</button>
+      <br /><br /><br /><button class="btn btn-primary button-result" (click)="limpar()">Reinicia</button>
     </div>
   </body>
 </html>
